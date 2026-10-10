@@ -49,7 +49,7 @@ if it fails, resync from the next `0xAA`.
 |------|----------------|------------------------------------------------------------------|
 | 0x01 | GPS_TIME_VALID | Locked to PPS at least once: timestamps are Unix time            |
 | 0x02 | GPS_PPS_OK     | Last PPS accepted less than 1.1 s ago; otherwise holding over    |
-| 0x04 | GPS_NMEA_OK    | A valid RMC time arrived less than 1 s ago                       |
+| 0x04 | GPS_NMEA_OK    | A valid RMC time arrived less than 1.1 s ago                     |
 | 0x08 | GPS_RATE_CAL   | The CPU clock rate has been measured against PPS                 |
 
 ## Which second does an RMC name?

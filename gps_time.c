@@ -47,7 +47,9 @@ uint8_t gps_time_status(void)
   uint8_t status = gps_flags;
   if ((status & GPS_TIME_VALID) && pps_holdoff_count_ms < 1100)
     status |= GPS_PPS_OK;
-  if (pps_nmea_age_ms < 1000)
+  // 1.1 s like PPS_OK: at 1 Hz NMEA the age reaches ~1000 ms just before
+  // the next sentence, so a 1000 ms limit flickers with jitter.
+  if (pps_nmea_age_ms < 1100)
     status |= GPS_NMEA_OK;
   return status;
 }

@@ -28,7 +28,7 @@
 // gps_status bits
 #define GPS_TIME_VALID  0x01  // locked to PPS at least once: timestamps are Unix time
 #define GPS_PPS_OK      0x02  // last PPS accepted < 1.1 s ago; otherwise holding over
-#define GPS_NMEA_OK     0x04  // valid RMC time received < 1 s ago
+#define GPS_NMEA_OK     0x04  // valid RMC time received < 1.1 s ago
 #define GPS_RATE_CAL    0x08  // CPU clock rate measured against PPS at least once
 
 void     gps_time_init(uint32_t nominal_cycles_per_sec);
